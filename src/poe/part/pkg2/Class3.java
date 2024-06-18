@@ -1,46 +1,59 @@
 package poe.part.pkg2;
 class Class3
 {
-    public boolean CheckUserName(String username) {
-        if (username.length() <= 5) {
+    public boolean CheckUserName(String username)
+    {
+        if (username.length() <= 5) 
+        {
             System.out.print("Username successfully captured");
-        } else {
+        } else 
+        {
             System.out.print("Username is not correctly formatted,please ensure that your username contains an underscore and is no more than 5 characters in length");
         }
-        if (username.contains("_")) {
+        if (username.contains("_"))
+        {
             return true;
-        } else {
+        } else 
+        {
             return false;
         }
 
     }
 
-    public boolean CheckPasswordComplexity(String password) {
-        if (password.length() > 8) {
-            if (CheckPass(password)) {
+    public boolean CheckPasswordComplexity(String password) 
+    {
+        if (password.length() > 8) 
+        {
+            if (CheckPass(password)) 
+            {
                 return true;
-            } else {
+            } else 
+            {
                 return false;
             }
         }
         return false;
     }
 
-    public boolean CheckPassword(String password) {
+    public boolean CheckPassword(String password)
+    {
         boolean hasNum = false;
         boolean hasCap = false;
         char c;
-        for (int i = 0; i < password.length(); i++) {
+        for (int i = 0; i < password.length(); i++)
+        {
             c = password.charAt(i);
             if (Character.isDigit(c));
             {
                 hasNum = true;
             }
 
-            if (Character.isUpperCase(c)) {
+            if (Character.isUpperCase(c)) 
+            {
                 hasCap = true;
             }
-            if (hasNum && hasCap) {
+            if (hasNum && hasCap) 
+            {
                 return true;
             }
 
@@ -48,7 +61,8 @@ class Class3
         return false;
     }
 
-    public boolean checkpasswordcomplexity(String password) {
+    public boolean checkpasswordcomplexity(String password)
+    {
         boolean hasSpecialChar = false;
         String SpecialChar[] = {"@", "$", "!", "~", "#"};
 

@@ -1,14 +1,13 @@
 
+import java.util.List;
+import java.util.Scanner;
 public class Task 
 {
-
-    static boolean checkTaskDescription() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 
     static String printTaskDetails() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
+
     private String TaskName;
     private int TaskNumber;
     private String TaskDescription;
@@ -31,6 +30,10 @@ public class Task
 
     }
 
+    Task(String Description, String ID, int Duration) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
     public boolean CheckTaskDescription() {
         return TaskDescription.length() <= 50;
 
@@ -44,14 +47,36 @@ public class Task
         return TaskNamePart + ":" + TaskNumber + ":" + DeveloperNamePart;
 
     }
-
+   
     public String PrintTaskDetails() {
         return "Task Name: " + TaskName + "\n" + "Task Number: " + TaskNumber + "\n" + "Task Description: " + TaskDescription + "\n" + "Developer Details: " + DeveloperDetails + "\n" + "Task Duration :" + TaskDuration + " hours\n" + "Task ID: " + TaskID + "\n" + "Task Status: " + TaskStatus;
 
     }
-
-    public static int returnTotalHours()
+    
+    public int getTaskDuration()
     {
+    return TaskDuration;
+    }
+
+    public static int returnTotalHours(List<Task> tasks)
+    {
+      int TotalHours = 0;
+      for (Task task : tasks)
+      {
+      TotalHours += task.getTaskDuration();
+      }
+       
         return TotalHours;
     }
+    
+    static boolean checkTaskDescription() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    String getID() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+   
+
 }

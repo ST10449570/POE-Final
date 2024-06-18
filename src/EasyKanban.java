@@ -5,10 +5,51 @@ public class EasyKanban
     private static ArrayList<Task> Tasks = new ArrayList<>();
     private static Scanner malux = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        String login;
+    public static void main(String[] args) 
+    {
+       TaskManager taskManager = new TaskManager();
+       taskManager.PopulateData();
+        
+      System.out.println("Task with status 'Done':");
+      
+      taskManager.DisplayTaskWithStatusDone();
+      
+      System.out.println();
+      
+      System.out.println("Task with the longest duration: ");
+      
+      taskManager.DisplayTaskWithLongestDuration();
+      
+      System.out.println();
+      
+      System.out.println("Search for task 'Create Login':");
+      
+      taskManager.SearchTaskByName("Create Login");
+      
+      System.out.println();
+      
+      System.out.println("Tasks assigned to developer 'Samantha Paulson':");
+      
+      taskManager.SearchTaskByseveloper("Samantha Paulson");
+      
+      System.out.println();
+      
+      System.out.println("Deleting task 'Create Reports':");
+      
+      taskManager.DeleteTaskByName("Create Reports");
+      
+      System.out.println();
+      
+      System.out.println("Displaying all tasks:");
+     
+      taskManager.DisplayAllTasks();
+      
+       
 
-        if (login()) {
+
+
+       String login;
+       if (login()) {
             System.out.print("Welcome to EasyKanban");
             login = malux.next();
 
@@ -132,4 +173,6 @@ public class EasyKanban
         System.out.print("How many tasks do you wish to enter? ");
         return malux.nextInt();
     }
+    
+
 }
